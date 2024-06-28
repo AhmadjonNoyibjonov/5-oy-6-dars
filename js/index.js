@@ -1,21 +1,3 @@
-// const text = document.querySelector("p");
-
-// text.addEventListener("click", function () {
-//   text.style.color = "red";
-// });
-
-// text.addEventListener("dblclick", function () {
-//   text.style.color = "yellow";
-// });
-
-// text.addEventListener("mouseover", function () {
-//   text.style.color = "blue";
-// });
-
-// text.addEventListener("mouseout", function () {
-//   text.style.color = "green";
-// });
-
 const form = document.querySelector(".block .form");
 const name = document.querySelector(".form .name");
 const surname = document.querySelector(".form .surname");
@@ -46,17 +28,14 @@ function logPassword() {
   }
 }
 
-form.addEventListener("keyup", function (event) {
+form.addEventListener("submit", function (event) {
   event.preventDefault();
-
-  button.addEventListener("click", function () {
-    if (password === confrimPassword) {
-      th1.appendChild(name.value);
-      th2.appendChild(surname.value);
-      th3.appendChild(phone.value);
-      th4.appendChild(address.value);
-      th5.appendChild(password.value);
-      th6.appendChild(confrimPassword.value);
-    }
-  });
+  if (password.value == confrimPassword.value) {
+    th1.textContent = name.value;
+    th2.textContent = surname.value;
+    th3.textContent = phone.value;
+    th4.textContent = address.value;
+    th5.textContent = password.value;
+    th6.textContent = confrimPassword.value;
+  }
 });
